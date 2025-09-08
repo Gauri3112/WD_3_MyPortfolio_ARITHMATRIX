@@ -1,0 +1,270 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light Mode Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #f1f3f4;
+  --text-primary: #000000;
+  --text-secondary: #333333;
+  --text-muted: #666666;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --accent-light: #e0e7ff;
+  --border-color: #e5e7eb;
+  --border-light: #f3f4f6;
+  
+  /* Dark Mode Colors */
+  --bg-primary-dark: #0d1117;
+  --bg-secondary-dark: #161b22;
+  --bg-tertiary-dark: #21262d;
+  --text-primary-dark: #f0f0f0;
+  --text-secondary-dark: #c9d1d9;
+  --text-muted-dark: #8b949e;
+  --accent-dark: #6366f1;
+  --accent-hover-dark: #4f46e5;
+  --accent-light-dark: #312e81;
+  --border-color-dark: #30363d;
+  --border-light-dark: #21262d;
+  
+  /* Shadows */
+  --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-large: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.2);
+}
+
+/* Apply CSS custom properties */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Dark mode styles */
+[data-theme="dark"] {
+  --bg-primary: var(--bg-primary-dark);
+  --bg-secondary: var(--bg-secondary-dark);
+  --bg-tertiary: var(--bg-tertiary-dark);
+  --text-primary: var(--text-primary-dark);
+  --text-secondary: var(--text-secondary-dark);
+  --text-muted: var(--text-muted-dark);
+  --accent: var(--accent-dark);
+  --accent-hover: var(--accent-hover-dark);
+  --border-color: var(--border-color-dark);
+  --border-light: var(--border-light-dark);
+}
+
+/* Background color utilities */
+.bg-background { background-color: var(--bg-primary) !important; }
+.bg-surface { background-color: var(--bg-secondary) !important; }
+.bg-surface-light { background-color: var(--bg-tertiary) !important; }
+
+/* Text color utilities */
+.text-text-primary { color: var(--text-primary) !important; }
+.text-text-secondary { color: var(--text-secondary) !important; }
+.text-text-muted { color: var(--text-muted) !important; }
+
+/* Border color utilities */
+.border-border-light { border-color: var(--border-light) !important; }
+.border-border { border-color: var(--border-color) !important; }
+
+/* Shadow utilities */
+.shadow-soft { box-shadow: var(--shadow-soft); }
+.shadow-medium { box-shadow: var(--shadow-medium); }
+.shadow-large { box-shadow: var(--shadow-large); }
+.shadow-glow { box-shadow: var(--shadow-glow); }
+
+/* Accent colors */
+.accent { color: var(--accent); }
+.bg-accent { background-color: var(--accent); }
+.bg-accent-hover { background-color: var(--accent-hover); }
+
+/* Enhanced card hover effects */
+.card-hover {
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--shadow-large);
+}
+
+/* Icon container styles */
+.icon-container {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease-in-out;
+}
+
+.icon-container:hover {
+  transform: scale(1.05);
+  background: var(--accent-hover);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Top badge styles */
+.top-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--accent);
+  color: var(--text-primary);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-soft);
+  z-index: 10;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Animation utilities */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out;
+}
+
+/* Responsive text utilities */
+.text-responsive-xl {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+.text-responsive-lg {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+}
+
+/* Text utilities - solid colors */
+.gradient-text {
+  color: var(--accent);
+}
+
+/* Button styles */
+.btn-primary {
+  background: var(--accent);
+  color: var(--text-primary);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  box-shadow: var(--shadow-soft);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-medium);
+  background: var(--accent-hover);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  padding: 12px 24px;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: var(--accent);
+  transform: scale(1.05);
+}
+
+/* Link hover animations */
+.link-hover {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.link-hover::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.3s ease-in-out;
+}
+
+.link-hover:hover::after {
+  width: 100%;
+}
+
+/* Section spacing */
+.section-padding {
+  padding: 6rem 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 4rem 0;
+  }
+}
+
+/* Form styles */
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  transition: all 0.3s ease-in-out;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(235, 227, 237, 0.1);
+}
+
+.form-input::placeholder {
+  color: var(--text-muted);
+}
